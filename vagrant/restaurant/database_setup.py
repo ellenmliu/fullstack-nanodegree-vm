@@ -1,12 +1,12 @@
 import sys
 
-from sqlalchemy import Column, ForeignKey, Integer, Sring
+from sqlalchemy import Column, ForeignKey, Integer, String
 
-from sqlalchemy.ext.declaractive import declaractive_base
+from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
-from sqlalchmey import create_engine
+from sqlalchemy import create_engine
 
-Base - declaractive_base()
+Base = declarative_base()
 
 class Restaurant(Base):
     __tablename__ = 'restaurant'
@@ -18,7 +18,7 @@ class MenuItem(Base):
     name = Column(String(80), nullable = False)
     id = Column(Integer, primary_key = True)
     course = Column(String(250))
-    description = Column(Sring(250))
+    description = Column(String(250))
     price = Column(String(8))
     restaurant_id = Column(Integer, ForeignKey('restaurant.id'))
     restaurant = relationship(Restaurant)
