@@ -1,47 +1,54 @@
 <html>
-<head>
-	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body class = pane>
+	<head>
+		<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+	</head>
+	<body class = pane>
 
-<h1 class = header>{{restaurant.name}}</h1>
-<!--Message Flashing-->
-{% with messages = get_flashed_messages() %}
-{% if messages %}
+		<h1 class = header>{{restaurant.name}}</h1>
+		<!--Message Flashing-->
+		{% with messages = get_flashed_messages() %}
+			{% if messages %}
 
-<ul class = flash>
-{% for message in messages %}
-  <li><strong>{{message}}</strong></li>
-  {% endfor %}
-</ul>
-{% endif %}
-{% endwith %}
+			<ul class = flash>
+				{% for message in messages %}
+				  <li><strong>{{message}}</strong></li>
+				{% endfor %}
+			</ul>
+			{% endif %}
+		{% endwith %}
+		<div class = "option regularoption">
+			<a href = '{{url_for('newMenuItem', restaurant_id = restaurant_id) }}'>Create New Item</a>
+		</div>
 
-<a href = '{{url_for('newMenuItem', restaurant_id = restaurant_id) }}'>Create New Item</a>
 
-{% if items %}
-{% for i in items %}
+		{% if items %}
+			{% for i in items %}
 
-<div>
+				<div class = iteminfo>
+					<p class = name>{{i.name}}</p>
 
-<p class = name>{{i.name}}</p>
+					<p class = price> {{i.price}} </p>
 
-<p class = description>{{i.description}}</p>
+					<p class = description>{{i.description}}</p>
 
-<p class = price> {{i.price}} </p>
+					<p class = course>{{i.course}}</p>
+				</div>
 
-</div>
-<div class = editdeletepane>
-<a href = '{{url_for('editMenuItem', restaurant_id = restaurant.id, menu_id = i.id) }}'>Edit</a>
-<a href = '{{url_for('deleteMenuItem', restaurant_id = restaurant.id, menu_id = i.id ) }}'>Delete</a>
-</div>
-{% endfor %}
+				<div class = editdeletepane>
+					<div class = "option smalleroption">
+						<a href = '{{url_for('editMenuItem', restaurant_id = restaurant.id, menu_id = i.id) }}'>Edit</a>
+					</div>
+					<div class = "option smalleroption">
+						<a href = '{{url_for('deleteMenuItem', restaurant_id = restaurant.id, menu_id = i.id ) }}'>Delete</a>
+					</div>
+				</div>
+			{% endfor %}
 
-{% else %}
+		{% else %}
 
-<p> There are no items in the menu </p>
+			<p> There are no items in the menu </p>
 
-{% endif %}
-</body>
+		{% endif %}
+	</body>
 
 </html>

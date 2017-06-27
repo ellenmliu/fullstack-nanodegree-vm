@@ -1,19 +1,37 @@
-body            { }
-h1, h2, h3, h4       { }
-h1, h2          {  }
-h1              {  }
-h2              {  }
+body            { font-family: sans-serif; background-color: #005852;}
+ h1, h2, h3, h4       { color: #B85000; left:50%; text-align: center;}
+h1, h2          { font-family: 'Georgia', serif; margin: 25px; }
+h1              { border-bottom: 2px solid #eee; }
+h2              { font-size: 1.2em; }
 
-p, dd, dt               { }
+p               { color: #5DD750;}
 
-a {}
+a {text-decoration: none; color:#FFA45F; font-size: .75em; text-align: center; padding: 15px 20px;}
 
-.pane { }
-.header         {}
-.name {}
-.rname {}
-.description {}
-.price { }
-.editdeletepane { }
+.option {border: 2px solid #B85000;
+    border-radius: 25px; padding: 15px; background-color: #B85000; margin: auto; text-align: center;}
 
-.flash          {  }
+.regularoption {width: 40%; min-width: 200px;}
+
+.smalleroption{width: 25%;}
+
+.pane { max-width: 500px; min-width: 350px; 50%; border: 2px solid;
+    border-radius: 25px; padding: 15px; margin: auto; border-color: #999999; background-color: #005852;}
+
+.iteminfo { width: 100%; display: inline;}
+
+.header {left:50%; text-align: center;}
+
+.rname {text-align: center; font-size: 1.25em;}
+
+.name {width:50%;  font-size: 1.25em;}
+
+.description {text-align: right; width:75%; }
+
+.course {text-align: left; width:25%; }
+
+.price {width:50%; text-align: right;}
+
+.editdeletepane{display: flex; justify-content: center;}
+
+.flash          { background: #cee5F5; }

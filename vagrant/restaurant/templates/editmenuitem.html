@@ -1,38 +1,38 @@
 <html>
-<head>
-	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body class = pane>
-<h1> Edit Menu Item </h1>
+	<head>
+		<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+	</head>
+	<body class = pane>
+		<h1> Edit Menu Item </h1>
 
-<form action='{{url_for('editMenuItem', restaurant_id=restaurant_id, menu_id = item.id)}}' method = 'POST'>
+		<form action='{{url_for('editMenuItem', restaurant_id=restaurant_id, menu_id = item.id)}}' method = 'POST'>
 
-<p class = name>Name:</p>
+			<p class = name>Name:</p>
 
-<input type='text' size='30' name='name' placeholder="{{item.name}}">
+			<input type='text' size='30' name='name' placeholder="{{item.name}}">
 
-<p>Price:</p>
+			<p>Price:</p>
 
-<input type='text' size='30' name='price' placeholder="{{item.price}}">
+			<input type='text' size='30' name='price' placeholder="{{item.price}}">
 
-<p>Course:</p>
+			<p>Course:</p>
 
-<input type='radio' name='course' value = 'Entree'> Entree
+			<input type='radio' name='course' value = 'Entree'> Entree
 
-<br><input type='radio' name='course' value = 'Appetizer'> Appetizer
+			<br><input type='radio' name='course' value = 'Appetizer'> Appetizer
 
-<br><input type='radio' name='course' value = 'Dessert'> Dessert
+			<br><input type='radio' name='course' value = 'Dessert'> Dessert
 
-<br><input type='radio' name='course' value = 'Beverage'> Beverage
+			<br><input type='radio' name='course' value = 'Beverage'> Beverage
 
-<p>Description:</p>
+			<p>Description:</p>
 
-<input type='text' size='30' name='description' placeholder="{{item.description}}">
+			<input type='text' size='30' name='description' placeholder="{{item.description}}">
 
-<input type='submit' value='Edit'>
+			<input type='submit' value='Edit'>
 
-<a href = '{{url_for('showMenu', restaurant_id = item.restaurant_id) }}'>Cancel</a>
-</form>
+			<a href = '{{url_for('showMenu', restaurant_id = item.restaurant_id) }}'>Cancel</a>
+		</form>
 
-</body>
+	</body>
 </html>
