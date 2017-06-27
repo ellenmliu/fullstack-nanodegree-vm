@@ -17,7 +17,7 @@
 {% endif %}
 {% endwith %}
 
-<a href = '{{url_for('newMenuItem', restaurant_id = restaurant.id) }}'>Create New Item</a>
+<a href = '{{url_for('newMenuItem', restaurant_id = restaurant_id) }}'>Create New Item</a>
 
 {% if items %}
 {% for i in items %}
@@ -36,6 +36,11 @@
 <a href = '{{url_for('deleteMenuItem', restaurant_id = restaurant.id, menu_id = i.id ) }}'>Delete</a>
 </div>
 {% endfor %}
+
+{% else %}
+
+<p> There are no items in the menu </p>
+
 {% endif %}
 </body>
 
