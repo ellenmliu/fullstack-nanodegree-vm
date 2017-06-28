@@ -6,7 +6,13 @@ h2              { font-size: 1.2em; }
 
 p               { color: #5DD750;}
 
+ul          {list-style: none; text-align: center;}
+
+form {width: 100%;}
+
 a {text-decoration: none; color:#FFA45F; font-size: .75em; text-align: center; padding: 15px 20px;}
+
+.delete {left: 50%}
 
 .option {border: 2px solid #B85000;
     border-radius: 25px; padding: 15px; background-color: #B85000; margin: auto; text-align: center;}
@@ -18,20 +24,22 @@ a {text-decoration: none; color:#FFA45F; font-size: .75em; text-align: center; p
 .pane { max-width: 500px; min-width: 350px; 50%; border: 2px solid;
     border-radius: 25px; padding: 15px; margin: auto; border-color: #999999; background-color: #005852;}
 
-.iteminfo { width: 100%; display: inline;}
+.iteminfo { margin: 25px; border-bottom: 2px dotted #999999; padding-bottom: 15px;}
 
-.header {left:50%; text-align: center;}
+.header { left:50%; text-align: center;}
 
-.rname {text-align: center; font-size: 1.25em;}
+.name, .price, .course, .description { display: inline-block;}
 
-.name {width:50%;  font-size: 1.25em;}
+.rname { text-align: center; font-size: 1.25em;}
 
-.description {text-align: right; width:75%; }
+.name { width:65%; margin:0;}
 
-.course {text-align: left; width:25%; }
+.description { text-align: right; width:70%;}
 
-.price {width:50%; text-align: right;}
+.course { text-align: left; width:25%;}
 
-.editdeletepane{display: flex; justify-content: center;}
+.price { width:30%; text-align: right;margin:0;}
 
-.flash          { background: #cee5F5; }
+.editdeletepane{ display: flex; justify-content: center;}
+
+.flash          { border: 2px dotted #999999; padding: 15px;}

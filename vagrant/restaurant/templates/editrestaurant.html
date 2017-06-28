@@ -7,13 +7,16 @@
 
 			<form action='{{url_for('editRestaurant', restaurant_id=restaurant_id)}}' method = 'POST'>
 
-			<p class = name>{{restaurant.name}}</p>
-
+			<p class = rname>{{restaurant.name}}</p>
+			<div class = editdeletepane>
 			<input type='text' size='30' name='name' placeholder="Update restaurant name">
 
-			<input type='submit' value='Edit'>
+			<input class = "option smalleroption" type='submit' value='Edit'>
+			</div>
+			<div class = "option regularoption">
+				<a href = '{{url_for('showRestaurants') }}'>Cancel</a>
+			</div>
 
-			<a href = '{{url_for('showRestaurants') }}'>Cancel</a>
 		</form>
 
 	</body>
